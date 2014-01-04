@@ -8,7 +8,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TexturePack extends JavaPlugin implements Listener{
-	Player player;
 	
 	@Override
 	public void onEnable(){
@@ -34,7 +33,7 @@ public class TexturePack extends JavaPlugin implements Listener{
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
-		player = event.getPlayer();
+		Player player = event.getPlayer();
 		
 		player.setTexturePack(getConfig().getString("Texture Pack"));
 	}
